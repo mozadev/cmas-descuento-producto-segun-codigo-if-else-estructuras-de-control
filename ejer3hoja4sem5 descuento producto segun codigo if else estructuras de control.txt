@@ -1,0 +1,45 @@
+#include <iostream>
+#include<conio.h>
+#include <stdlib.h>
+#include<math.h>
+using namespace std;
+long long IngresaDato()
+{
+	long long Dato;
+	cin >> Dato;
+	 if (Dato >=100000  && (Dato)<=999999 ) return Dato;
+	else { cout << "Error de ingreso codigo"; exit(0); _getch(); }
+
+}
+
+float ingreseprecio()
+{
+	float Dato1;
+	cin >> Dato1;
+	if (Dato1 >0) return Dato1;
+	else { cout << "Error de ingreso precio"; exit(0); _getch(); }
+
+}
+
+
+float Preciofinal()
+{
+	long long codigo;
+		float lola;
+
+	cout << "ingrese codigo "; codigo = IngresaDato();
+	cout << "ingrese precio "; lola = ingreseprecio();
+
+	if (codigo / 100000 == 4 || codigo / 100000 == 9) return lola*(1-4.5/100);
+	else if (codigo / 100000 == 1 || codigo / 100000 == 5) return lola*(1 - 8.00/100);
+	else if (codigo / 100000 == 2 || codigo / 100000 == 6) return lola*(1 - 3.5/100);
+	else if (codigo / 100000 == 3 || codigo / 100000 == 7) return lola*(1 - 11.00 / 100);
+	else if (codigo / 100000 == 8) return lola*(1 - 4.25 / 100);
+}
+
+
+float main()
+{
+	cout << Preciofinal();
+	_getch();
+}
